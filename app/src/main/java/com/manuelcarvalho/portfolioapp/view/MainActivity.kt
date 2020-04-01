@@ -1,10 +1,11 @@
-package com.manuelcarvalho.portfolioapp
+package com.manuelcarvalho.portfolioapp.view
 
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.snackbar.Snackbar
+import com.manuelcarvalho.portfolioapp.R
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -31,7 +32,10 @@ class MainActivity : AppCompatActivity() {
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
         return when (item.itemId) {
-            R.id.action_settings -> true
+            R.id.action_logout -> {
+                //code
+                return true
+            }
             else -> super.onOptionsItemSelected(item)
         }
     }

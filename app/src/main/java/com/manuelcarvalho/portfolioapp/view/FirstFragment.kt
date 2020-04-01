@@ -1,4 +1,4 @@
-package com.manuelcarvalho.portfolioapp
+package com.manuelcarvalho.portfolioapp.view
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -8,6 +8,7 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.google.firebase.auth.FirebaseAuth
+import com.manuelcarvalho.portfolioapp.R
 
 
 class FirstFragment : Fragment() {

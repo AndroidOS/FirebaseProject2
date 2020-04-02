@@ -6,14 +6,18 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.fragment.findNavController
 import com.google.firebase.auth.FirebaseAuth
 import com.manuelcarvalho.portfolioapp.R
+import com.manuelcarvalho.portfolioapp.viewmodel.AppViewModel
 
 
 class FirstFragment : Fragment() {
 
     private lateinit var mAuth: FirebaseAuth
+    private lateinit var viewModel: AppViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -25,6 +29,12 @@ class FirstFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+
+
+        viewModel = activity?.run {
+            ViewModelProviders.of(this)[AppViewModel::class.java]
+        } ?: throw Exception("Invalid Activity")
 
         mAuth = FirebaseAuth.getInstance()
 
@@ -41,6 +51,7 @@ class FirstFragment : Fragment() {
 //        view.findViewById<Button>(R.id.button_first).setOnClickListener {
 //            findNavController().navigate(R.id.action_FirstFragment_to_SecondFragment)
 //        }
+        observeViewModel()
     }
 
     private fun loginUser() {
@@ -56,5 +67,16 @@ class FirstFragment : Fragment() {
                     ).show()
                 }
             }
+    }
+
+    private fun observeViewModel() {
+
+        viewModel.logout.observe(viewLifecycleOwner, Observer { logout ->
+            logout?.let {
+                if (logout == false) {
+                    findNavController().navigate(R.id.action_FirstFragment_to_SecondFragment)
+                }
+            }
+        })
     }
 }

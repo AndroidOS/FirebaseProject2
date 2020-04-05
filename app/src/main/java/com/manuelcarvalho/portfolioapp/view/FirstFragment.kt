@@ -33,6 +33,7 @@ class FirstFragment : Fragment() {
 
 
 
+
         viewModel = activity?.run {
             ViewModelProviders.of(this)[AppViewModel::class.java]
         } ?: throw Exception("Invalid Activity")

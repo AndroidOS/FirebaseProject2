@@ -9,17 +9,21 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.fragment.findNavController
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 import com.manuelcarvalho.portfolioapp.R
 import com.manuelcarvalho.portfolioapp.viewmodel.AppViewModel
+import kotlinx.android.synthetic.main.fragment_second.*
 
 private const val TAG = "SecondFragment"
 class SecondFragment : Fragment() {
 
     private lateinit var viewModel: AppViewModel
     val db = Firebase.firestore
+
+    private val listAdapter = ListAdapter(arrayListOf(1.0, 2.0))
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -31,6 +35,11 @@ class SecondFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        recyclerview.apply {
+            layoutManager = LinearLayoutManager(context)
+            adapter = listAdapter
+        }
 
         viewModel = activity?.run {
             ViewModelProviders.of(this)[AppViewModel::class.java]

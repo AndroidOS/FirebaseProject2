@@ -9,6 +9,7 @@ import androidx.lifecycle.ViewModelProviders
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 import com.manuelcarvalho.portfolioapp.R
+import com.manuelcarvalho.portfolioapp.model.Part
 import com.manuelcarvalho.portfolioapp.viewmodel.AppViewModel
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -26,8 +27,8 @@ class MainActivity : AppCompatActivity() {
         viewModel = ViewModelProviders.of(this)[AppViewModel::class.java]
 
         fab.setOnClickListener { view ->
-            //testData()
-            readData()
+            testData()
+            //readData()
         }
     }
 
@@ -52,16 +53,17 @@ class MainActivity : AppCompatActivity() {
 
     private fun testData() {
         // Create a new user with a first and last name
-        val user = hashMapOf(
-            "first" to "Ada",
-            "last" to "Lovelace",
-            "born" to 1815
-        )
+//        val user = hashMapOf(
+//            "first" to "Ada",
+//            "last" to "Lovelace",
+//            "born" to 1815
+//        )
+        val part = Part("Commodore", "VIC-20", "Gorf", "Good")
 
 // Add a new document with a generated ID
         Log.d(TAG, "testdata method")
-        db.collection("users")
-            .add(user)
+        db.collection("carts")
+            .add(part)
             .addOnSuccessListener { documentReference ->
                 Log.d(TAG, "DocumentSnapshot added with ID: ${documentReference.id}")
             }

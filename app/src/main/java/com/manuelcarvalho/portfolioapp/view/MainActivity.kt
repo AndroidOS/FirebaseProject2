@@ -9,9 +9,9 @@ import androidx.lifecycle.ViewModelProviders
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 import com.manuelcarvalho.portfolioapp.R
-import com.manuelcarvalho.portfolioapp.model.Part
 import com.manuelcarvalho.portfolioapp.viewmodel.AppViewModel
 import kotlinx.android.synthetic.main.activity_main.*
+import java.io.InputStream
 
 private const val TAG = "MainActivity"
 class MainActivity : AppCompatActivity() {
@@ -27,7 +27,8 @@ class MainActivity : AppCompatActivity() {
         viewModel = ViewModelProviders.of(this)[AppViewModel::class.java]
 
         fab.setOnClickListener { view ->
-            testData()
+            bulkData()
+            //testData()
             //readData()
         }
     }
@@ -58,18 +59,18 @@ class MainActivity : AppCompatActivity() {
 //            "last" to "Lovelace",
 //            "born" to 1815
 //        )
-        val part = Part("Commodore", "VIC-20", "Gorf", "Good")
+        //val part = Part("Commodore", "VIC-20", "Gorf", "Good")
 
 // Add a new document with a generated ID
-        Log.d(TAG, "testdata method")
-        db.collection("carts")
-            .add(part)
-            .addOnSuccessListener { documentReference ->
-                Log.d(TAG, "DocumentSnapshot added with ID: ${documentReference.id}")
-            }
-            .addOnFailureListener { e ->
-                Log.w(TAG, "Error adding document", e)
-            }
+//        Log.d(TAG, "testdata method")
+//        db.collection("carts")
+//            .add(part)
+//            .addOnSuccessListener { documentReference ->
+//                Log.d(TAG, "DocumentSnapshot added with ID: ${documentReference.id}")
+//            }
+//            .addOnFailureListener { e ->
+//                Log.w(TAG, "Error adding document", e)
+//            }
 
     }
 
@@ -84,5 +85,31 @@ class MainActivity : AppCompatActivity() {
             .addOnFailureListener { exception ->
                 Log.w(TAG, "Error getting documents.", exception)
             }
+    }
+
+    private fun bulkData() {
+        try {
+            val inputStream: InputStream = assets.open("cart.txt")
+            val text = inputStream.bufferedReader().use { it.readText() }
+
+            val a = text.split("\n")
+            //Log.d(TAG, " ${text}")
+            //val result = text.substring(startIndex = 0, endIndex = 10)
+            Log.d(TAG, " ${a[10]}")
+            //text = text.replace("JJ".toRegex(), "NN")
+//            f.writeText(text)
+        } catch (e: Exception) {
+            Log.d(TAG, e.toString())
+        }
+
+        Log.d(TAG, "testdata method")
+//        db.collection("carts")
+//            .add(part)
+//            .addOnSuccessListener { documentReference ->
+//                Log.d(TAG, "DocumentSnapshot added with ID: ${documentReference.id}")
+//            }
+//            .addOnFailureListener { e ->
+//                Log.w(TAG, "Error adding document", e)
+//            }
     }
 }

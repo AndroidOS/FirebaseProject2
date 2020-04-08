@@ -1,0 +1,166 @@
+
+
+Academy     IFR (Flight Simulator)           N/A          8k   B     R   1983
+Atarisoft   Pac-Man                         [RX8501]      8k   C+    C   1983
+Atarisoft   Centipede                       [RX8504]     16k   C     S   1983
+Atarisoft   Defender                        [RX8507]     16k   A-    C   1983
+Atarisoft   Dig Dug                         [RX8510]     16k   B     C   1983
+Atarisoft   Donkey Kong                     [RX8513]     16k   B     C   1983
+Atarisoft   Robotron: 2084                  [RX8520]     12k   B-    C   1983
+Atarisoft   Jungle Hunt                     [RX8529]     16k   B-    C   1984
+Atarisoft   Moon Patrol                     [RX8532]     16k   B-    C   1983
+Atarisoft   Pole Position                   [RX8535]     16k   B+    C   1983
+Atarisoft   Galaxian                        [RX8541]      8k   C+   ER   1984
+Atarisoft   Ms. Pac-Man                     [RX8544]     16k   C+    C   1983
+Atarisoft   Battlezone                      [RX8547]     16k   B-    U   1983
+Beyond      Mountain King                    NA          16k   A+    R   1983
+Boone       Cyclon                           NA           8k   A    PR   1983
+Broderbund  A.E.                            [Viccart-___]16k   B     R   1982
+Broderbund  Lode Runner                     [Viccart-___]16k   B+    U   1983
+Broderbund  MasterType                      [Viccart-221]16k   B-    R   1983
+Broderbund  SeaFox                          [Viccart-___]16k   B    ER   1983
+Broderbund  Skyblazer                       [Viccart-___]16k   A    ER   1983
+CBS Soft.   K-Razy Antiks                   [22107]      12k   B+    C   1982
+CBS Soft.   K-Star Patrol                   [22108]      16k   B+    C   1982
+Commodore   Avenger  (Vic Avenger)          [Vic-1901]    8k   C+    S   1981
+Commodore   Star Battle                     [Vic-1902]    8k   B+    R   1981
+Commodore   Slot  (Super Slot)              [Vic-1904]    8k   C     C   1981
+Commodore   Jelly Monsters                  [Vic-1905]    8k   A     R   1981?
+Commodore   Alien  (Super Alien)            [Vic-1906]    8k   C     C   1981
+Commodore   Jupiter Lander                  [Vic-1907]    8k   B     C   1981?
+Commodore   Poker  (Draw Poker)             [Vic-1908]    8k   C     C   1981
+Commodore   Midnight Drive  (Road Race)     [Vic-1909]    8k   C-    C   1981
+Commodore   Radar Rat Race                  [Vic-1910]    8k   B+    C   1981
+Commodore   The Sky is Falling              [Vic-1911]    8k   B-    C   1981
+Commodore   Mole Attack                     [Vic-1912]    8k   C     C   1981
+Commodore   Raid on Fort Knox (Bank Robber) [Vic-1913]    8k   C     C   1982
+Commodore   Adventure Land Adventure        [Vic-1914]   16k   B-    C   1981
+Commodore   Pirate's Cove Adventure         [Vic-1915]   16k   B-    C   1981
+Commodore   Mission Impossible Adventure    [Vic-1916]   16k   B-    C   1981
+Commodore   The Count Adventure             [Vic-1917]   16k   B-    C   1981
+Commodore   Voodoo Castle Adventure         [Vic-1918]   16k   B-    C   1981
+Commodore   Sargon II Chess                 [Vic-1919]    8k   C     C   1982?
+Commodore   Pinball (or ...Spectacular)     [Vic-1920]   16k   C+    C   1982
+Commodore   Super Smash                     [Vic-1921]    8k   C     C   1982
+Commodore   Cosmic Cruncher                 [Vic-1922]    8k   B     S   1982
+Commodore   Gorf                            [Vic-1923]    8k   B-    S   1982
+Commodore   Omega Race                      [Vic-1924]    8k   A-    S   1982
+Commodore   Money Wars                      [Vic-1925]    8k   C+    C   1982
+Commodore   Menagerie                       [Vic-1926]    8k   C-    C   1982?
+Commodore   Cosmic Jailbreak                [Vic-1927]    8k   C     C   1982
+Commodore   Home Babysitter                 [Vic-1928]    8k   C-    C   1982
+Commodore   Personal Finance (utility cart) [Vic-1929]    8k   NA    U   1982
+Commodore   Visible Solar System            [Vic-1930]    8k   C     C   1982
+Commodore   Clowns                          [Vic-1931]    8k   C+    C   1982
+Commodore   Garden Wars                     [Vic-1932]    8k   C     C   1982
+Commodore   Speed Math & Bingo Math         [Vic-1933]    8k   C-    C   1982
+Commodore   Commodore Artist                [Vic-1935]    4k   C     U   1982
+Commodore   Sea Wolf                        [Vic-1937]    8k   B-    U   1982
+Commodore   Tooth Invaders                  [Vic-1938]    8k   C+    U   1983
+Commodore   Star Post                       [Vic-1939]    8k   C     U   1982?
+Commodore   Number Nabber, Shape Grabber    [Vic-1941]    8k   NA    U   1982
+Creative    Apple Panic                     [VI AP C]    12k   C     C   1982
+Creative    Astroblitz                      [VI AB C]     4k   B-    C   1982
+Creative    Black Hole                      [VI BH C]     4k   B     U   1982
+Creative    Choplifter                      [VI CL C]     8k   A     C   1982
+Creative    Household Finance               [VI HF C]     8k   NA    U   1983
+Creative    In the Chips                    [VI CH C]    16k   C     R   1983
+Creative    Pipes                           [VI PI C]     8k   C     R   1983
+Creative    Rat Hotel                       [VI RH C]?    8k   B-    U   1982
+Creative    Serpentine                      [VI __ C]     8k   B     C   1982
+Creative    Spills and Fills                [VI SF C]     8k   C     R   1983
+Creative    TerraGuard                      [VI TG C]     4k   C+    C   1982
+Creative    Trashman                        [VI TM C]     8k   B+    C   1982
+Creative    Videomania                      [VI VM C]     4k   C     C   1982
+HES         Vic FORTH        (utility cart) [C301]        8k   NA    C   1982
+HES         HesMon           (utility cart) [C302]        8k   NA    C   1982
+HES         Turtle Graphics                 [C303]        8k   NA    C   1982
+HES         HesWriter        (utility cart) [C304]        8k   NA    U   1982
+HES         Aggressor                       [C305]        8k   C     U   1982
+HES         Synthesound      (utility cart) [C306]        8k   NA    U   1982
+HES         Shamus                          [C307]        8k   A     U   1983
+HES         Protector                       [C308]        8k   B-    R   1983
+HES         Robot Panic                     [C310]        8k   B     R   1982
+HES         Gridrunner                      [C312]        4k   B+    C   1982
+HES         Predator                        [C316]        8k   B+    R   1982
+HES         Attack of the Mutant Camels     [C318]        8k   A     R   1983
+HES         Pharaoh's Curse                 [C321]       16k   A     R   1983
+HES         Kindercomp                      [C322]       16k   NA    R   1983
+HES         Story Machine                   [C323]       12k   NA   ER   1983
+HES         Facemaker                       [C324]        8k   NA    R   1983
+HES         Kids on Keys                    [C325]        8k   NA    R   1983
+HES         Alphabet Zoo                    [C326]       16k   NA    R   1982
+HES         Lazer Zone                      [C3__]        8k   A     R   1983
+HES         Maze                            [C3__]        8k   C+    R   1983
+HES         Mosquito Infestation            [C3__]        4k   B-    R   1982
+HES         Satellite Patrol                [C3__]        4k   B-    R   1982
+Imagic      Demon Attack                    [720050-1A]   4k   A     C   1983
+Imagic      Atlantis                        [720051-1A]   4k   A     C   1983
+Imagic      Dragonfire                      [720052-1A]   8k   B+    U   1983
+Koala Tech. Dancing Bear                                 16k   C+   ER   1983
+Mach. Lang. Amazing Maze                                  4k        ER   198_
+Mach. Lang. Dot Gobbler                                   4k   A-   ER   198_
+MSD         Mobile Attack                                 8k   C+   ER   198_
+OEM         Alien Sidestep                                4k   C-   ER   1983
+OEM         Bug Crusher                                   4k        ER   1983
+Parker      Frogger                         [PB1410]      8k   D     S   1983
+Parker      Q*Bert                          [PB1420]      4k   C     C   1983
+Parker      Tutankham                       [PB1430]      8k   A     U   1983
+Reston      Miner 2049'er                                 8k   A+    R   1983
+Romox       Princess & Frog                               8k   C    ER   1983
+Romox       Topper                                        8k   B    ER   1983
+Romox       Typo                                          8k   C+   ER   1983
+Sega        Star Trek  (S.O.S.)             [004-04]      8k   B+    C   1983
+Sega        Buck Rogers: Planet of Zoom     [005-04]     16k   B-    C   1983
+Sega        Congo Bongo                     [006-04]      8k   C     C   1983
+Sierra      Crossfire                       [CFL-401]     4k   B+    U   1981
+Sierra      Lunar Leeper                    [LLL-401]    12k   A     R   1981
+Sierra      Threshold                       [THL-401]     8k   A     R   1981
+Sierra      Cannonball Blitz                [CBL-401]    12k   B-    R   1982
+Sierra      Jawbreaker II                   [JBL-401]     8k   C+    U   1982
+Sierra      Creepy Corridors                [CCL-401]     8k   B+    R   1983
+Sirius      Deadly Duck                     [220__]       4k   B     R   1982
+Sirius      Fast Eddie                      [220__]       8k   C     R   1982
+Sirius      Snake Byte                      [22031]       4k   C     R   1982
+Sirius      Turmoil                         [22005]       8k   B     U   1982
+Sirius      Type Attack                     [22010]       8k   B     R   1982
+Sirius      Bandits                         [220__]       8k   B+    U   1983
+Sirius      Capture the Flag                [220__]       8k   B+    R   1983
+Sirius      Final Orbit/Bumper Bash (2 on 1)[220__]       8k   C/B+  R   1983
+Sirius      Spider City                     [22015]       4k   B+    R   1983
+Spectra.    Ape Escape                      [SC-215]      8k   C+    R   1982
+Spectra.    Cave-in                         [SC-207]      8k   C-    R   1982
+Supersoft   Tank Atak                                     8k   C    ER   1982
+Thorn EMI   River Rescue                    [THC 22001]   8k   C-    C   1982
+Thorn EMI   Vic Music Composer              [THC 22002]   8k   NA    U   1982
+Thorn EMI   Submarine Commander             [THC 22003]  12k   C     C   1982
+Thorn EMI   Mutant Herd                     [THC 22004]   8k   C-    C   1982
+Thorn EMI   Fourth Encounter                [THC 22005]   8k   D+    U   1983
+Thorn EMI   Computer War                    [THC 22006]   8k   C     R   1983
+Thorn EMI   Medieval Joust                  [THC 22007]   8k   C    ER   1983
+Thorn EMI   Mine Madness                    [THC 22008]   8k   C-   ER   1983
+Tigervision Polaris                         [_-00_-20]    8k   B    ER   1983
+Tigervision Springer                        [7-006-20]   16k   C    ER   1983
+Tronix      Deadly Skies                                  4k   B+    R   1983
+Tronix      Gold Fever                                    4k   C+    R   1983
+Tronix      Scorpion                                      8k   B     R   1983
+UMI         Alien Blitz                     [1619]        4k   B-    R   1981
+UMI         Amok                            [1611]        4k   C     R   1981
+UMI         Outworld                        [1635]       16k   B+    R   1981
+UMI         Arachnoid                       [16__]       12k   B     R   1982
+UMI         Cloudburst                      [1636]        4k   C     R   1982
+UMI         Meteor Run                      [1613]        8k   D+    R   1982
+UMI         Renaissance                     [1600]       12k   C-    R   1982
+UMI         Skibbereen                      [1641]        4k   C+    R   1982
+UMI         Satellites and Meteorites       [1650]        8k   A-    R   1982
+UMI         Sub Chase                       [16__]        4k   C    ER   1982
+UMI         Video Vermin                    [1638]        8k   A     R   1982
+UMI         Spiders of Mars                 [1604]       16k   B+    R   198_
+UMI         Super Amok                      [1642]        8k   A     R   198_
+Xonox       Spike's Peak (GM=2)             [6215]        8k   C+    R   1983
+Xonox       Ghost Manor (SP=1)              [6215]        8k   D     R   1983
+Xonox       Robin Hood (SL=2)               [6225]        8k   D     R   1983
+Xonox       Sir Lancelot (RH=1)             [6225]        8k   C+    R   1983
+Xonox       Chuck Norris Superkicks (AD=2)  [6235]        8k   C     R   1983
+Xonox       Artillery Duel (CNS=1)          [6235]        8k   B     R   1983
+Xonox       Tomarc the Barbarian            [____]        8k   D+   ER   198_

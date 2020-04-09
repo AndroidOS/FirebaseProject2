@@ -9,6 +9,7 @@ import androidx.lifecycle.ViewModelProviders
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 import com.manuelcarvalho.portfolioapp.R
+import com.manuelcarvalho.portfolioapp.model.Part
 import com.manuelcarvalho.portfolioapp.viewmodel.AppViewModel
 import kotlinx.android.synthetic.main.activity_main.*
 import java.io.InputStream
@@ -88,28 +89,63 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun bulkData() {
+        var cartList: List<Part>? = null
         try {
             val inputStream: InputStream = assets.open("cart.txt")
             val text = inputStream.bufferedReader().use { it.readText() }
 
             val a = text.split("\n")
-            //Log.d(TAG, " ${text}")
-            //val result = text.substring(startIndex = 0, endIndex = 10)
-            Log.d(TAG, " ${a[10]}")
-            //text = text.replace("JJ".toRegex(), "NN")
-//            f.writeText(text)
+
+            val manufacturer = a[0].substring(startIndex = 0, endIndex = 12)
+
+            cartList = splitString(a)
+
         } catch (e: Exception) {
             Log.d(TAG, e.toString())
         }
 
         Log.d(TAG, "testdata method")
-//        db.collection("carts")
-//            .add(part)
-//            .addOnSuccessListener { documentReference ->
-//                Log.d(TAG, "DocumentSnapshot added with ID: ${documentReference.id}")
-//            }
-//            .addOnFailureListener { e ->
-//                Log.w(TAG, "Error adding document", e)
-//            }
+        if (cartList != null) {
+            for (c in cartList) {
+
+
+                db.collection("carts")
+                    .add(c)
+                    .addOnSuccessListener { documentReference ->
+                        Log.d(TAG, "DocumentSnapshot added with ID: ${documentReference.id}")
+                    }
+                    .addOnFailureListener { e ->
+                        Log.w(TAG, "Error adding document", e)
+                    }
+            }
+        }
+    }
+
+    private fun splitString(stringArray: List<String>): List<Part> {
+        val cartList = mutableListOf<Part>()
+        for (t in stringArray) {
+            val manufacturer = t.substring(startIndex = 0, endIndex = 12)
+            val cartridge = t.substring(startIndex = 12, endIndex = 44)
+            val partNum = t.substring(startIndex = 44, endIndex = 56)
+            val memUse = t.substring(startIndex = 57, endIndex = 60)
+            val gamePlay = t.substring(startIndex = 62, endIndex = 67)
+            val scarcity = t.substring(startIndex = 68, endIndex = 72)
+            val releaseYear = t.substring(startIndex = 73, endIndex = 77)
+            cartList.add(
+                Part(
+                    manufacturer,
+                    "VIC-20",
+                    cartridge,
+                    "Good",
+                    partNum,
+                    memUse,
+                    gamePlay,
+                    scarcity,
+                    releaseYear
+                )
+            )
+        }
+
+        return cartList
     }
 }

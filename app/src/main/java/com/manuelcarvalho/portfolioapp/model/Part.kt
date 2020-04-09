@@ -9,6 +9,6 @@ data class Part(
     val romUse: String,
     val gamePlay: String,
     val rarity: String,
-    val yearMade: Int
+    val yearMade: String
 
 )

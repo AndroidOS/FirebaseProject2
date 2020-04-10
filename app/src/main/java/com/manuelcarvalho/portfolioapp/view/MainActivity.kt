@@ -28,9 +28,10 @@ class MainActivity : AppCompatActivity() {
         viewModel = ViewModelProviders.of(this)[AppViewModel::class.java]
 
         fab.setOnClickListener { view ->
-            bulkData()
+            //bulkData()
             //testData()
             //readData()
+            viewModel.refresh()
         }
     }
 

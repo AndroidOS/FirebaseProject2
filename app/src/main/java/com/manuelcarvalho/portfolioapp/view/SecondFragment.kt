@@ -14,6 +14,7 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 import com.manuelcarvalho.portfolioapp.R
+import com.manuelcarvalho.portfolioapp.model.Part
 import com.manuelcarvalho.portfolioapp.viewmodel.AppViewModel
 import kotlinx.android.synthetic.main.fragment_second.*
 
@@ -23,7 +24,7 @@ class SecondFragment : Fragment() {
     private lateinit var viewModel: AppViewModel
     val db = Firebase.firestore
 
-    private val listAdapter = ListAdapter(arrayListOf(1.0, 2.0))
+    private val listAdapter = ListAdapter(ArrayList<Part>())
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -46,28 +47,9 @@ class SecondFragment : Fragment() {
         } ?: throw Exception("Invalid Activity")
 
         observeViewModel()
-        //testData()
+
     }
 
-//    private fun testData(){
-//        // Create a new user with a first and last name
-//        val user = hashMapOf(
-//            "first" to "Ada",
-//            "last" to "Lovelace",
-//            "born" to 1815
-//        )
-//
-//// Add a new document with a generated ID
-//        db.collection("users")
-//            .add(user)
-//            .addOnSuccessListener { documentReference ->
-//                Log.d(TAG, "DocumentSnapshot added with ID: ${documentReference.id}")
-//            }
-//            .addOnFailureListener { e ->
-//                Log.w(TAG, "Error adding document", e)
-//            }
-//
-//    }
 
     private fun observeViewModel() {
 
@@ -79,6 +61,12 @@ class SecondFragment : Fragment() {
                         .signOut()
                     findNavController().navigate(R.id.action_SecondFragment_to_FirstFragment)
                 }
+            }
+        })
+
+        viewModel.carts.observe(viewLifecycleOwner, Observer { carts ->
+            carts?.let {
+                listAdapter.updatelist(carts)
             }
         })
     }

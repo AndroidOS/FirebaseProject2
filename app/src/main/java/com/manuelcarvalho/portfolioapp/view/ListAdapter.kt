@@ -6,32 +6,33 @@ import android.view.ViewGroup
 import androidx.navigation.Navigation
 import androidx.recyclerview.widget.RecyclerView
 import com.manuelcarvalho.portfolioapp.R
+import com.manuelcarvalho.portfolioapp.model.Part
 import kotlinx.android.synthetic.main.list_view.view.*
 
 
-class ListAdapter(val magList: ArrayList<Double>) :
-    RecyclerView.Adapter<ListAdapter.MagViewHolder>() {
+class ListAdapter(val cartList: ArrayList<Part>) :
+    RecyclerView.Adapter<ListAdapter.CartViewHolder>() {
 
-    fun updatelist(newGitJobsList: List<Double>) {
-        magList.clear()
-        magList.addAll(newGitJobsList)
+    fun updatelist(cartList1: List<Part>) {
+        cartList.clear()
+        cartList.addAll(cartList1)
         notifyDataSetChanged()
     }
 
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MagViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CartViewHolder {
         val inflater = LayoutInflater.from(parent.context)
         val view: View = inflater.inflate(
             R.layout.list_view
             , parent, false
         )
-        return MagViewHolder(view)
+        return CartViewHolder(view)
     }
 
-    override fun getItemCount() = magList.size
+    override fun getItemCount() = cartList.size
 
-    override fun onBindViewHolder(holder: MagViewHolder, position: Int) {
-        holder.view.textView.text = magList[position].toString()
+    override fun onBindViewHolder(holder: CartViewHolder, position: Int) {
+        holder.view.textView.text = cartList[position].catridge
 
 
 
@@ -42,5 +43,5 @@ class ListAdapter(val magList: ArrayList<Double>) :
 
     }
 
-    class MagViewHolder(var view: View) : RecyclerView.ViewHolder(view)
+    class CartViewHolder(var view: View) : RecyclerView.ViewHolder(view)
 }

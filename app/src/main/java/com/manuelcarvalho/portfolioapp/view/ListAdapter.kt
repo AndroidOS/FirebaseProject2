@@ -32,8 +32,9 @@ class ListAdapter(val cartList: ArrayList<Part>) :
     override fun getItemCount() = cartList.size
 
     override fun onBindViewHolder(holder: CartViewHolder, position: Int) {
-        holder.view.textView.text = cartList[position].catridge
-
+        holder.view.tv_cart.text = cartList[position].catridge
+        holder.view.tv_manufacturer.text = cartList[position].manufacturer
+        holder.view.tv_romUse.text = cartList[position].romUse
 
 
         holder.view.setOnClickListener {

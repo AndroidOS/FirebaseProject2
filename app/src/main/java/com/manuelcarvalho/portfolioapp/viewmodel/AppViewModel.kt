@@ -17,6 +17,7 @@ class AppViewModel(application: Application) : BaseViewModel(application) {
 
     val db = Firebase.firestore
     val logout = MutableLiveData<Boolean>()
+    val add = MutableLiveData<Boolean>()
     val carts by lazy { MutableLiveData<List<Part>>() }
 
     fun refresh() {

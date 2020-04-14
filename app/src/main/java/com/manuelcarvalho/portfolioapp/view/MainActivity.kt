@@ -50,6 +50,10 @@ class MainActivity : AppCompatActivity() {
                 viewModel.logout.value = true
                 return true
             }
+            R.id.action_add -> {
+                viewModel.add.value = true
+                return true
+            }
             else -> super.onOptionsItemSelected(item)
         }
     }

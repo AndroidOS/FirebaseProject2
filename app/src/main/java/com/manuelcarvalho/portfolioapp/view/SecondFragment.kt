@@ -64,6 +64,16 @@ class SecondFragment : Fragment() {
             }
         })
 
+        viewModel.add.observe(viewLifecycleOwner, Observer { add ->
+            add?.let {
+                if (add == true) {
+                    Log.d(TAG, "Viewmodel add")
+                    viewModel.add.value = false
+                    findNavController().navigate(R.id.action_SecondFragment_to_addFragment)
+                }
+            }
+        })
+
         viewModel.carts.observe(viewLifecycleOwner, Observer { carts ->
             carts?.let {
                 listAdapter.updatelist(carts)

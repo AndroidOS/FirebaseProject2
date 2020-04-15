@@ -17,4 +17,18 @@
 
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
+    <style name="AddHeading">
+        <item name="android:textSize">28dp</item>
+        <item name="android:textColor">@color/colorAddHeadding</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:background">@color/colorAddBackground</item>
+    </style>
+
+    <style name="AddText">
+        <item name="android:textSize">15dp</item>
+        <item name="android:textColor">@color/colorAddHeadding</item>
+
+
+    </style>
+
 </resources>

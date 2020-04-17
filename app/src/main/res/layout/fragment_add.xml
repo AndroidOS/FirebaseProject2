@@ -6,248 +6,255 @@
     android:layout_height="match_parent"
     tools:context=".view.AddFragment">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <TextView
-            android:id="@+id/textView"
-            style="@style/AddHeading"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:text="Add Cartridge"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
 
-        <TextView
-            android:id="@+id/textView2"
-            style="@style/AddText"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:text="Manufacturer"
-            app:layout_constraintBaseline_toBaselineOf="@+id/ed_manufacturer"
-            app:layout_constraintStart_toStartOf="@+id/textView" />
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
-        <EditText
-            android:id="@+id/ed_manufacturer"
-            style="@style/AddText"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="32dp"
-            android:layout_marginTop="8dp"
-            android:hint="Manufacturer"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/textView2"
-            app:layout_constraintTop_toBottomOf="@+id/textView" />
+            <TextView
+                android:id="@+id/txt_heading"
+                style="@style/AddHeading"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Add Cartridge"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-        <TextView
-            android:id="@+id/textView3"
-            style="@style/AddText"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Computer       "
-            app:layout_constraintBaseline_toBaselineOf="@+id/et_computer"
-            app:layout_constraintStart_toStartOf="@+id/textView2" />
+            <TextView
+                android:id="@+id/textView2"
+                style="@style/AddText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Manufacturer"
+                app:layout_constraintBaseline_toBaselineOf="@+id/ed_manufacturer"
+                app:layout_constraintStart_toStartOf="@+id/txt_heading" />
 
-        <EditText
-            android:id="@+id/et_computer"
-            style="@style/AddText"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            <EditText
+                android:id="@+id/ed_manufacturer"
+                style="@style/AddText"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="8dp"
+                android:hint="Manufacturer"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toEndOf="@+id/textView2"
+                app:layout_constraintTop_toBottomOf="@+id/txt_heading" />
 
-            android:layout_marginStart="32dp"
-            android:layout_marginTop="8dp"
-            android:hint="Computer"
-            android:inputType="textPersonName"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/textView3"
-            app:layout_constraintTop_toBottomOf="@+id/ed_manufacturer" />
+            <TextView
+                android:id="@+id/textView3"
+                style="@style/AddText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Computer       "
+                app:layout_constraintBaseline_toBaselineOf="@+id/et_computer"
+                app:layout_constraintStart_toStartOf="@+id/textView2" />
 
-        <TextView
-            android:id="@+id/textView4"
-            style="@style/AddText"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Cartridge        "
-            app:layout_constraintBaseline_toBaselineOf="@+id/ed_cartridge"
-            app:layout_constraintStart_toStartOf="@+id/textView3" />
+            <EditText
+                android:id="@+id/et_computer"
+                style="@style/AddText"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
 
-        <EditText
-            android:id="@+id/ed_cartridge"
-            style="@style/AddText"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="32dp"
-            android:layout_marginTop="8dp"
-            android:ems="10"
-            android:hint="Cartridge"
-            android:inputType="textPersonName"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/textView4"
-            app:layout_constraintTop_toBottomOf="@+id/et_computer" />
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="8dp"
+                android:hint="Computer"
+                android:inputType="textPersonName"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/textView3"
+                app:layout_constraintTop_toBottomOf="@+id/ed_manufacturer" />
 
-        <TextView
-            android:id="@+id/textView5"
-            style="@style/AddText"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Condition       "
-            app:layout_constraintBaseline_toBaselineOf="@+id/ed_condition"
-            app:layout_constraintStart_toStartOf="@+id/textView4" />
+            <TextView
+                android:id="@+id/textView4"
+                style="@style/AddText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Cartridge        "
+                app:layout_constraintBaseline_toBaselineOf="@+id/ed_cartridge"
+                app:layout_constraintStart_toStartOf="@+id/textView3" />
 
-        <EditText
-            android:id="@+id/ed_condition"
-            style="@style/AddText"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="32dp"
-            android:layout_marginTop="8dp"
-            android:ems="10"
-            android:hint="Condition
+            <EditText
+                android:id="@+id/ed_cartridge"
+                style="@style/AddText"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="8dp"
+                android:ems="10"
+                android:hint="Cartridge"
+                android:inputType="textPersonName"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/textView4"
+                app:layout_constraintTop_toBottomOf="@+id/et_computer" />
+
+            <TextView
+                android:id="@+id/textView5"
+                style="@style/AddText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Condition       "
+                app:layout_constraintBaseline_toBaselineOf="@+id/ed_condition"
+                app:layout_constraintStart_toStartOf="@+id/textView4" />
+
+            <EditText
+                android:id="@+id/ed_condition"
+                style="@style/AddText"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="8dp"
+                android:ems="10"
+                android:hint="Condition
 "
-            android:inputType="textPersonName"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/textView5"
-            app:layout_constraintTop_toBottomOf="@+id/ed_cartridge" />
+                android:inputType="textPersonName"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/textView5"
+                app:layout_constraintTop_toBottomOf="@+id/ed_cartridge" />
 
-        <TextView
-            android:id="@+id/textView6"
-            style="@style/AddText"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Part Number  "
-            app:layout_constraintBaseline_toBaselineOf="@+id/ed_partNum"
-            app:layout_constraintStart_toStartOf="@+id/textView5" />
+            <TextView
+                android:id="@+id/textView6"
+                style="@style/AddText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Part Number  "
+                app:layout_constraintBaseline_toBaselineOf="@+id/ed_partNum"
+                app:layout_constraintStart_toStartOf="@+id/textView5" />
 
-        <EditText
-            android:id="@+id/ed_partNum"
-            style="@style/AddText"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="32dp"
-            android:layout_marginTop="8dp"
-            android:ems="10"
-            android:hint="Part number"
-            android:inputType="textPersonName"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/textView6"
-            app:layout_constraintTop_toBottomOf="@+id/ed_condition" />
+            <EditText
+                android:id="@+id/ed_partNum"
+                style="@style/AddText"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="8dp"
+                android:ems="10"
+                android:hint="Part number"
+                android:inputType="textPersonName"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/textView6"
+                app:layout_constraintTop_toBottomOf="@+id/ed_condition" />
 
-        <TextView
-            android:id="@+id/textView7"
-            style="@style/AddText"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Rom Use        "
-            app:layout_constraintBaseline_toBaselineOf="@+id/ed_romUse"
-            app:layout_constraintStart_toStartOf="@+id/textView6" />
+            <TextView
+                android:id="@+id/textView7"
+                style="@style/AddText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Rom Use        "
+                app:layout_constraintBaseline_toBaselineOf="@+id/ed_romUse"
+                app:layout_constraintStart_toStartOf="@+id/textView6" />
 
-        <EditText
-            android:id="@+id/ed_romUse"
-            style="@style/AddText"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="32dp"
-            android:layout_marginTop="8dp"
-            android:ems="10"
-            android:hint="Rom Use"
-            android:inputType="textPersonName"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/textView7"
-            app:layout_constraintTop_toBottomOf="@+id/ed_partNum" />
+            <EditText
+                android:id="@+id/ed_romUse"
+                style="@style/AddText"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="8dp"
+                android:ems="10"
+                android:hint="Rom Use"
+                android:inputType="textPersonName"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/textView7"
+                app:layout_constraintTop_toBottomOf="@+id/ed_partNum" />
 
-        <TextView
-            android:id="@+id/textView8"
-            style="@style/AddText"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Game Play     "
-            app:layout_constraintBaseline_toBaselineOf="@+id/ed_gamePlay"
-            app:layout_constraintStart_toStartOf="@+id/textView7" />
+            <TextView
+                android:id="@+id/textView8"
+                style="@style/AddText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Game Play     "
+                app:layout_constraintBaseline_toBaselineOf="@+id/ed_gamePlay"
+                app:layout_constraintStart_toStartOf="@+id/textView7" />
 
-        <EditText
-            android:id="@+id/ed_gamePlay"
-            style="@style/AddText"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="32dp"
-            android:layout_marginTop="8dp"
-            android:ems="10"
-            android:hint="Game Play"
-            android:inputType="textPersonName"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/textView8"
-            app:layout_constraintTop_toBottomOf="@+id/ed_romUse" />
+            <EditText
+                android:id="@+id/ed_gamePlay"
+                style="@style/AddText"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="8dp"
+                android:ems="10"
+                android:hint="Game Play"
+                android:inputType="textPersonName"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/textView8"
+                app:layout_constraintTop_toBottomOf="@+id/ed_romUse" />
 
-        <TextView
-            android:id="@+id/textView9"
-            style="@style/AddText"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Rarity             "
-            app:layout_constraintBaseline_toBaselineOf="@+id/ed_rarity"
-            app:layout_constraintStart_toStartOf="@+id/textView8" />
+            <TextView
+                android:id="@+id/textView9"
+                style="@style/AddText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Rarity             "
+                app:layout_constraintBaseline_toBaselineOf="@+id/ed_rarity"
+                app:layout_constraintStart_toStartOf="@+id/textView8" />
 
-        <EditText
-            android:id="@+id/ed_rarity"
-            style="@style/AddText"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="32dp"
-            android:layout_marginTop="8dp"
-            android:ems="10"
-            android:hint="Rarity"
-            android:inputType="textPersonName"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/textView9"
-            app:layout_constraintTop_toBottomOf="@+id/ed_gamePlay" />
+            <EditText
+                android:id="@+id/ed_rarity"
+                style="@style/AddText"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="8dp"
+                android:ems="10"
+                android:hint="Rarity"
+                android:inputType="textPersonName"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/textView9"
+                app:layout_constraintTop_toBottomOf="@+id/ed_gamePlay" />
 
-        <TextView
-            android:id="@+id/textView10"
-            style="@style/AddText"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Year Made     "
-            app:layout_constraintBaseline_toBaselineOf="@+id/ed_yearMade"
-            app:layout_constraintStart_toStartOf="@+id/textView9" />
+            <TextView
+                android:id="@+id/textView10"
+                style="@style/AddText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Year Made     "
+                app:layout_constraintBaseline_toBaselineOf="@+id/ed_yearMade"
+                app:layout_constraintStart_toStartOf="@+id/textView9" />
 
-        <EditText
-            android:id="@+id/ed_yearMade"
-            style="@style/AddText"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="32dp"
-            android:layout_marginTop="8dp"
-            android:ems="10"
-            android:hint="Year Made"
-            android:inputType="textPersonName"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/textView10"
-            app:layout_constraintTop_toBottomOf="@+id/ed_rarity" />
+            <EditText
+                android:id="@+id/ed_yearMade"
+                style="@style/AddText"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="8dp"
+                android:ems="10"
+                android:hint="Year Made"
+                android:inputType="textPersonName"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/textView10"
+                app:layout_constraintTop_toBottomOf="@+id/ed_rarity" />
 
-        <Button
-            android:id="@+id/btn_add"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="16dp"
-            android:text="Add"
-            app:layout_constraintBaseline_toBaselineOf="@+id/btn_clear"
-            app:layout_constraintEnd_toStartOf="@+id/btn_clear"
-            app:layout_constraintStart_toStartOf="@+id/textView10" />
+            <Button
+                android:id="@+id/btn_add"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:text="Add"
+                app:layout_constraintBaseline_toBaselineOf="@+id/btn_clear"
+                app:layout_constraintEnd_toStartOf="@+id/btn_clear"
+                app:layout_constraintStart_toStartOf="@+id/textView10" />
 
-        <Button
-            android:id="@+id/btn_clear"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:layout_marginEnd="16dp"
-            android:text="Clear"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/ed_yearMade" />
+            <Button
+                android:id="@+id/btn_clear"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:text="Clear"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ed_yearMade" />
 
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
 </FrameLayout>

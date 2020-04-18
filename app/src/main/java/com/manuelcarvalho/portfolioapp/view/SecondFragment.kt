@@ -46,8 +46,15 @@ class SecondFragment : Fragment() {
             ViewModelProviders.of(this)[AppViewModel::class.java]
         } ?: throw Exception("Invalid Activity")
 
+
+
         observeViewModel()
 
+    }
+
+    override fun onResume() {
+        super.onResume()
+        viewModel.fabDisplay.value = true
     }
 
 

@@ -19,6 +19,7 @@ class AppViewModel(application: Application) : BaseViewModel(application) {
     val logout = MutableLiveData<Boolean>()
     val add = MutableLiveData<Boolean>()
     val carts by lazy { MutableLiveData<List<Part>>() }
+    val fabDisplay = MutableLiveData<Boolean>()
 
     fun refresh() {
         Log.w(TAG, "Refresh ")

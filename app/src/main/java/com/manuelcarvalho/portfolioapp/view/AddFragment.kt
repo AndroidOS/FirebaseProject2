@@ -6,12 +6,16 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProviders
 import com.manuelcarvalho.portfolioapp.R
 import com.manuelcarvalho.portfolioapp.model.Part
+import com.manuelcarvalho.portfolioapp.viewmodel.AppViewModel
 import kotlinx.android.synthetic.main.fragment_add.*
 
 private const val TAG = "AddFragment"
 class AddFragment : Fragment() {
+
+    private lateinit var viewModel: AppViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -23,6 +27,12 @@ class AddFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        viewModel = activity?.run {
+            ViewModelProviders.of(this)[AppViewModel::class.java]
+        } ?: throw Exception("Invalid Activity")
+
+        viewModel.fabDisplay.value = false
 
         btn_add.setOnClickListener {
 

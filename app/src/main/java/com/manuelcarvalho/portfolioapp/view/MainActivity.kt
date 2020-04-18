@@ -5,6 +5,7 @@ import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
@@ -26,6 +27,8 @@ class MainActivity : AppCompatActivity() {
         setSupportActionBar(toolbar)
 
         viewModel = ViewModelProviders.of(this)[AppViewModel::class.java]
+
+        observeViewModel()
 
         fab.setOnClickListener { view ->
             //bulkData()
@@ -152,5 +155,18 @@ class MainActivity : AppCompatActivity() {
         }
 
         return cartList
+    }
+
+    private fun observeViewModel() {
+
+        viewModel.fabDisplay.observe(this, Observer { fabBut ->
+            fabBut?.let {
+                if (fabBut == false) {
+                    fab.hide()
+                } else {
+                    fab.show()
+                }
+            }
+        })
     }
 }

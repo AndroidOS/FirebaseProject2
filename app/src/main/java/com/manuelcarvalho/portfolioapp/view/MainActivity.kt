@@ -1,9 +1,11 @@
 package com.manuelcarvalho.portfolioapp.view
 
+import android.content.DialogInterface
 import android.os.Bundle
 import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
@@ -34,7 +36,8 @@ class MainActivity : AppCompatActivity() {
             //bulkData()
             //testData()
             //readData()
-            viewModel.refresh()
+            //viewModel.refresh()
+            dialogueQuery()
         }
     }
 
@@ -59,6 +62,52 @@ class MainActivity : AppCompatActivity() {
             }
             else -> super.onOptionsItemSelected(item)
         }
+    }
+
+    private fun dialogueQuery() {
+        val alertDialog: AlertDialog? = this.let {
+            val builder = AlertDialog.Builder(it)
+            builder.apply {
+                setPositiveButton(R.string.ok,
+                    DialogInterface.OnClickListener { dialog, id ->
+                        // User clicked OK button
+                    })
+                setNegativeButton(R.string.cancel,
+                    DialogInterface.OnClickListener { dialog, id ->
+                        // User cancelled the dialog
+                    })
+
+                setTitle("Choose Cartridge")
+
+                //Test data
+                val items = arrayOf<CharSequence>(
+                    "Gallery Image Menu",
+                    "View pattern",
+                    "Delete pattern",
+                    "Locate pattern in list view",
+                    "Row Counter (with pattern)",
+                    "Share Pattern",
+                    "Share Image",
+                    "Cancel"
+                )
+
+                builder.setItems(items,
+
+                    DialogInterface.OnClickListener { dialog, which ->
+                        // The 'which' argument contains the index position
+                        // of the selected item
+                    })
+            }
+
+
+            // Set other dialog properties
+            //...
+
+            // Create the AlertDialog
+            builder.create()
+        }
+
+        alertDialog?.show()
     }
 
     private fun testData() {

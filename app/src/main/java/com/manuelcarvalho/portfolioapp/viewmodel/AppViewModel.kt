@@ -18,18 +18,20 @@ class AppViewModel(application: Application) : BaseViewModel(application) {
     val db = Firebase.firestore
     val logout = MutableLiveData<Boolean>()
     val add = MutableLiveData<Boolean>()
+    val manufacturers = MutableLiveData<List<String>>()
     val carts by lazy { MutableLiveData<List<Part>>() }
     val fabDisplay = MutableLiveData<Boolean>()
 
     fun refresh() {
         Log.w(TAG, "Refresh ")
         db.collection("carts")
-            .whereEqualTo("manufacturer", "Mach. Lang. ")
+            .whereEqualTo("manufacturer", "Commodore ")
             .get()
             .addOnSuccessListener { documents ->
                 createList(documents)
                 for (document in documents) {
                     Log.d(TAG, "${document.id} => ${document.data}")
+                    Log.d(TAG, "${documents.size()}")
                 }
             }
             .addOnFailureListener { exception ->
@@ -42,9 +44,11 @@ class AppViewModel(application: Application) : BaseViewModel(application) {
     private fun createList(documents: QuerySnapshot) {
         launch {
             var cartList = mutableListOf<Part>()
+            var manu = mutableListOf<String>()
             //Log.d(TAG, "${documents}")
             for (document in documents) {
                 Log.d(TAG, "${document}")
+                manu.add(document.data["manufacturer"].toString())
                 cartList.add(
                     Part(
                         document.data["manufacturer"].toString(),
@@ -60,6 +64,7 @@ class AppViewModel(application: Application) : BaseViewModel(application) {
                 )
             }
             carts.value = cartList
+            manufacturers.value = manu
         }
         //Log.d(TAG, "${cartList.get(0)}")
 

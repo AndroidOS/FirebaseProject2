@@ -22,6 +22,7 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var viewModel: AppViewModel
     val db = Firebase.firestore
+    val manu = arrayOf<CharSequence>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -36,8 +37,8 @@ class MainActivity : AppCompatActivity() {
             //bulkData()
             //testData()
             //readData()
-            //viewModel.refresh()
-            dialogueQuery()
+            viewModel.refresh()
+            //dialogueQuery()
         }
     }
 
@@ -91,7 +92,8 @@ class MainActivity : AppCompatActivity() {
                     "Cancel"
                 )
 
-                builder.setItems(items,
+                builder.setItems(
+                    manu,
 
                     DialogInterface.OnClickListener { dialog, which ->
                         // The 'which' argument contains the index position
@@ -215,6 +217,17 @@ class MainActivity : AppCompatActivity() {
                 } else {
                     fab.show()
                 }
+            }
+        })
+
+        viewModel.manufacturers.observe(this, Observer { list ->
+            var myArray = arrayOf<CharSequence>()
+            list?.let {
+                for (n in list) {
+                    Log.d(TAG, "manu $n")
+                }
+
+
             }
         })
     }

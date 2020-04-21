@@ -25,7 +25,7 @@ class AppViewModel(application: Application) : BaseViewModel(application) {
     fun refresh() {
         Log.w(TAG, "Refresh ")
         db.collection("carts")
-            .whereEqualTo("manufacturer", "Commodore ")
+            .whereEqualTo("manufacturer", "Broderbund  ")
             .get()
             .addOnSuccessListener { documents ->
                 createList(documents)
@@ -37,6 +37,7 @@ class AppViewModel(application: Application) : BaseViewModel(application) {
             .addOnFailureListener { exception ->
                 Log.w(TAG, "Error getting documents: ", exception)
             }
+
 
     }
 

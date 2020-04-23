@@ -61,6 +61,10 @@ class MainActivity : AppCompatActivity() {
                 viewModel.add.value = true
                 return true
             }
+            R.id.action_query -> {
+                dialogueQuery()
+                return true
+            }
             else -> super.onOptionsItemSelected(item)
         }
     }
@@ -82,18 +86,21 @@ class MainActivity : AppCompatActivity() {
 
                 //Test data
                 val items = arrayOf<CharSequence>(
-                    "Gallery Image Menu",
-                    "View pattern",
-                    "Delete pattern",
-                    "Locate pattern in list view",
-                    "Row Counter (with pattern)",
-                    "Share Pattern",
-                    "Share Image",
-                    "Cancel"
+                    "Academy",
+                    "Atarisoft",
+                    "Beyond",
+                    "Boone",
+                    "Broderbund",
+                    "CBS Soft",
+                    "Commodore",
+                    "Creative",
+                    "HES",
+                    "Imagic",
+                    "Xonox"
                 )
 
                 builder.setItems(
-                    manu,
+                    items,
 
                     DialogInterface.OnClickListener { dialog, which ->
                         // The 'which' argument contains the index position

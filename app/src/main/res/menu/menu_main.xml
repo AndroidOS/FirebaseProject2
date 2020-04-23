@@ -22,4 +22,11 @@
         android:title="Logout"
         app:showAsAction="always" />
 
+    <item
+        android:id="@+id/action_query"
+        android:icon="@drawable/ic_search"
+        android:orderInCategory="102"
+        android:title="Search"
+        app:showAsAction="always" />
+
 </menu>

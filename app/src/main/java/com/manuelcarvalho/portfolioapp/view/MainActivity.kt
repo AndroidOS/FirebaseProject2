@@ -37,7 +37,8 @@ class MainActivity : AppCompatActivity() {
             //bulkData()
             //testData()
             //readData()
-            viewModel.refresh()
+            val a = "Broderbund "
+            viewModel.refresh("HES ")
             //dialogueQuery()
         }
     }
@@ -86,25 +87,27 @@ class MainActivity : AppCompatActivity() {
 
                 //Test data
                 val items = arrayOf<CharSequence>(
-                    "Academy",
-                    "Atarisoft",
-                    "Beyond",
-                    "Boone",
-                    "Broderbund",
-                    "CBS Soft",
-                    "Commodore",
-                    "Creative",
-                    "HES",
-                    "Imagic",
-                    "Xonox"
+                    "Academy ",
+                    "Atarisoft ",
+                    "Beyond ",
+                    "Boone ",
+                    "Broderbund ",
+                    "CBS Soft ",
+                    "Commodore ",
+                    "Creative ",
+                    "HES ",
+                    "Imagic ",
+                    "Xonox "
                 )
 
                 builder.setItems(
                     items,
 
                     DialogInterface.OnClickListener { dialog, which ->
-                        // The 'which' argument contains the index position
-                        // of the selected item
+                        var choice = items[which]
+                        viewModel.manuSelect.value = "$choice "
+                        viewModel.refresh(choice.toString())
+                        //Log.d(TAG,"$choice")
                     })
             }
 

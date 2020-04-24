@@ -21,11 +21,12 @@ class AppViewModel(application: Application) : BaseViewModel(application) {
     val manufacturers = MutableLiveData<List<String>>()
     val carts by lazy { MutableLiveData<List<Part>>() }
     val fabDisplay = MutableLiveData<Boolean>()
+    val manuSelect = MutableLiveData<String>()
 
-    fun refresh() {
-        Log.w(TAG, "Refresh ")
+    fun refresh(choice: String) {
+        Log.w(TAG, "$choice")
         db.collection("carts")
-            .whereEqualTo("manufacturer", "Broderbund  ")
+            .whereEqualTo("manufacturer", choice)
             .get()
             .addOnSuccessListener { documents ->
                 createList(documents)
@@ -46,7 +47,7 @@ class AppViewModel(application: Application) : BaseViewModel(application) {
         launch {
             var cartList = mutableListOf<Part>()
             var manu = mutableListOf<String>()
-            //Log.d(TAG, "${documents}")
+            Log.d(TAG, "${documents}")
             for (document in documents) {
                 Log.d(TAG, "${document}")
                 manu.add(document.data["manufacturer"].toString())

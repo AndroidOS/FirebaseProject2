@@ -48,7 +48,6 @@ class SecondFragment : Fragment() {
         } ?: throw Exception("Invalid Activity")
 
 
-
         observeViewModel()
 
     }

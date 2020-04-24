@@ -37,8 +37,8 @@ class MainActivity : AppCompatActivity() {
             //bulkData()
             //testData()
             //readData()
-            val a = "Broderbund "
-            viewModel.refresh("HES ")
+            val a = "Broderbund   "
+            viewModel.refresh(a)
             //dialogueQuery()
         }
     }
@@ -105,8 +105,8 @@ class MainActivity : AppCompatActivity() {
 
                     DialogInterface.OnClickListener { dialog, which ->
                         var choice = items[which]
-                        viewModel.manuSelect.value = "$choice "
-                        viewModel.refresh(choice.toString())
+                        //viewModel.manuSelect.value = "$choice "
+                        viewModel.refresh("$choice  ")
                         //Log.d(TAG,"$choice")
                     })
             }

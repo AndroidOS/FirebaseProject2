@@ -24,22 +24,23 @@ class AppViewModel(application: Application) : BaseViewModel(application) {
     val manuSelect = MutableLiveData<String>()
 
     fun refresh(choice: String) {
-        Log.w(TAG, "$choice")
-        db.collection("carts")
-            .whereEqualTo("manufacturer", choice)
-            .get()
-            .addOnSuccessListener { documents ->
-                createList(documents)
-                for (document in documents) {
-                    Log.d(TAG, "${document.id} => ${document.data}")
-                    Log.d(TAG, "${documents.size()}")
+        // Log.w(TAG, "$choice")
+        launch {
+            db.collection("carts")
+                .whereEqualTo("manufacturer", choice)
+                .get()
+                .addOnSuccessListener { documents ->
+                    createList(documents)
+                    for (document in documents) {
+                        Log.d(TAG, "${document.id} => ${document.data}")
+                        Log.d(TAG, "${documents.size()}")
+                    }
                 }
-            }
-            .addOnFailureListener { exception ->
-                Log.w(TAG, "Error getting documents: ", exception)
-            }
+                .addOnFailureListener { exception ->
+                    Log.w(TAG, "Error getting documents: ", exception)
+                }
 
-
+        }
     }
 
 

@@ -87,17 +87,17 @@ class MainActivity : AppCompatActivity() {
 
                 //Test data
                 val items = arrayOf<CharSequence>(
-                    "Academy ",
-                    "Atarisoft ",
-                    "Beyond ",
-                    "Boone ",
-                    "Broderbund ",
-                    "CBS Soft ",
-                    "Commodore ",
-                    "Creative ",
-                    "HES ",
-                    "Imagic ",
-                    "Xonox "
+                    "Academy",
+                    "Atarisoft",
+                    "Beyond",
+                    "Boone",
+                    "Broderbund",
+                    "CBS Soft.",
+                    "Commodore",
+                    "Creative",
+                    "HES",
+                    "Imagic",
+                    "Xonox"
                 )
 
                 builder.setItems(
@@ -106,7 +106,7 @@ class MainActivity : AppCompatActivity() {
                     DialogInterface.OnClickListener { dialog, which ->
                         var choice = items[which]
                         //viewModel.manuSelect.value = "$choice "
-                        viewModel.refresh("$choice  ")
+                        viewModel.refresh(choice.toString())
                         //Log.d(TAG,"$choice")
                     })
             }
@@ -193,13 +193,13 @@ class MainActivity : AppCompatActivity() {
     private fun splitString(stringArray: List<String>): List<Part> {
         val cartList = mutableListOf<Part>()
         for (t in stringArray) {
-            val manufacturer = t.substring(startIndex = 0, endIndex = 12)
-            val cartridge = t.substring(startIndex = 12, endIndex = 44)
-            val partNum = t.substring(startIndex = 44, endIndex = 56)
-            val memUse = t.substring(startIndex = 57, endIndex = 60)
-            val gamePlay = t.substring(startIndex = 62, endIndex = 67)
-            val scarcity = t.substring(startIndex = 68, endIndex = 72)
-            val releaseYear = t.substring(startIndex = 73, endIndex = 77)
+            val manufacturer = t.substring(startIndex = 0, endIndex = 12).trim()
+            val cartridge = t.substring(startIndex = 12, endIndex = 44).trim()
+            val partNum = t.substring(startIndex = 44, endIndex = 56).trim()
+            val memUse = t.substring(startIndex = 57, endIndex = 60).trim()
+            val gamePlay = t.substring(startIndex = 62, endIndex = 67).trim()
+            val scarcity = t.substring(startIndex = 68, endIndex = 72).trim()
+            val releaseYear = t.substring(startIndex = 73, endIndex = 77).trim()
             cartList.add(
                 Part(
                     manufacturer,

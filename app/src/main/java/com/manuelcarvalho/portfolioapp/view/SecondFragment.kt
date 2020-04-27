@@ -37,7 +37,7 @@ class SecondFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        activity?.title = "Second Fragment"
+        activity?.title = "Items"
         recyclerview.apply {
             layoutManager = LinearLayoutManager(context)
             adapter = listAdapter

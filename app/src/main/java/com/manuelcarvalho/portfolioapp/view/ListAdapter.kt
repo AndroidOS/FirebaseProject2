@@ -39,10 +39,11 @@ class ListAdapter(val cartList: ArrayList<Part>) :
 
         holder.view.setOnClickListener {
             Navigation.findNavController(it)
-                .navigate(FirstFragmentDirections.actionFirstFragmentToSecondFragment())
+                .navigate(SecondFragmentDirections.actionSecondFragmentToWebFragment())
         }
 
     }
 
+    //.navigate(FirstFragmentDirections.actionFirstFragmentToSecondFragment())
     class CartViewHolder(var view: View) : RecyclerView.ViewHolder(view)
 }

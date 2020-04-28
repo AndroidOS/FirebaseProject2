@@ -1,5 +1,6 @@
 package com.manuelcarvalho.portfolioapp.view
 
+import android.content.Context
 import android.content.DialogInterface
 import android.os.Bundle
 import android.util.Log
@@ -24,6 +25,7 @@ class MainActivity : AppCompatActivity() {
     val db = Firebase.firestore
     val manu = arrayOf<CharSequence>()
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -37,9 +39,10 @@ class MainActivity : AppCompatActivity() {
             //bulkData()
             //testData()
             //readData()
-            val a = "Broderbund   "
-            viewModel.refresh(a)
+//            val a = "Broderbund   "
+//            viewModel.refresh(a)
             //dialogueQuery()
+
         }
     }
 
@@ -73,6 +76,8 @@ class MainActivity : AppCompatActivity() {
     private fun dialogueQuery() {
         val alertDialog: AlertDialog? = this.let {
             val builder = AlertDialog.Builder(it)
+            var choice = ""
+
             builder.apply {
                 setPositiveButton(R.string.ok,
                     DialogInterface.OnClickListener { dialog, id ->
@@ -104,18 +109,21 @@ class MainActivity : AppCompatActivity() {
                     items,
 
                     DialogInterface.OnClickListener { dialog, which ->
-                        var choice = items[which]
-                        //viewModel.manuSelect.value = "$choice "
-                        viewModel.refresh(choice.toString())
-                        //Log.d(TAG,"$choice")
+                        choice = items[which].toString()
+                        viewModel.refresh(choice)
+
+                        val preference = getSharedPreferences(
+                            resources.getString(R.string.app_name),
+                            Context.MODE_PRIVATE
+                        )
+                        val editor = preference.edit()
+
+                        editor.putString("choice", choice)
+                        editor.commit()
                     })
+
             }
 
-
-            // Set other dialog properties
-            //...
-
-            // Create the AlertDialog
             builder.create()
         }
 

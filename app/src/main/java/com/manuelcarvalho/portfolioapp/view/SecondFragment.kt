@@ -1,5 +1,6 @@
 package com.manuelcarvalho.portfolioapp.view
 
+import android.content.Context
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -23,6 +24,8 @@ class SecondFragment : Fragment() {
 
     private lateinit var viewModel: AppViewModel
     val db = Firebase.firestore
+    val sharedPref = activity?.getPreferences(Context.MODE_PRIVATE)
+    var choice: String? = ""
 
     private val listAdapter = ListAdapter(ArrayList<Part>())
 
@@ -37,6 +40,16 @@ class SecondFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+
+        //choice = sharedPref?.getString("choice", "HES")
+        val preference = activity?.getSharedPreferences(
+            resources.getString(R.string.app_name),
+            Context.MODE_PRIVATE
+        )
+        choice = preference?.getString("choice", "HES")
+
+        Log.d(TAG, "Choice value = $choice")
+
         activity?.title = "Items"
         recyclerview.apply {
             layoutManager = LinearLayoutManager(context)
@@ -47,6 +60,9 @@ class SecondFragment : Fragment() {
             ViewModelProviders.of(this)[AppViewModel::class.java]
         } ?: throw Exception("Invalid Activity")
 
+
+
+        choice?.let { viewModel.refresh(it) }
 
         observeViewModel()
 

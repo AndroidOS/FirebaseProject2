@@ -48,5 +48,9 @@
         <action
             android:id="@+id/action_webFragment_to_SecondFragment"
             app:destination="@id/SecondFragment" />
+        <argument
+            android:name="search"
+            android:defaultValue="Commodore"
+            app:argType="string" />
     </fragment>
 </navigation>

@@ -31,7 +31,7 @@ class FirstFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        activity?.title = "First Fragment"
+        activity?.title = "Log In"
 
 
         viewModel = activity?.run {

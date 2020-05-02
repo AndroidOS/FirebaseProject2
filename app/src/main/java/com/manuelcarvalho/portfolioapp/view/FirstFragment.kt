@@ -12,6 +12,7 @@ import androidx.navigation.fragment.findNavController
 import com.google.firebase.auth.FirebaseAuth
 import com.manuelcarvalho.portfolioapp.R
 import com.manuelcarvalho.portfolioapp.viewmodel.AppViewModel
+import kotlinx.android.synthetic.main.fragment_first.*
 
 
 class FirstFragment : Fragment() {
@@ -47,17 +48,28 @@ class FirstFragment : Fragment() {
                 activity, "User not signed in",
                 Toast.LENGTH_SHORT
             ).show()
-            loginUser()
+            //loginUser("joe@gmail.com", "Pass123#")
             //startActivity(Intent(this, LoginActivity::class.java))
         }
 //        view.findViewById<Button>(R.id.button_first).setOnClickListener {
 //            findNavController().navigate(R.id.action_FirstFragment_to_SecondFragment)
 //        }
-        observeViewModel()
+        // observeViewModel()
+
+        btn_login.setOnClickListener {
+            if (mAuth.currentUser != null) {
+                findNavController().navigate(R.id.action_FirstFragment_to_SecondFragment)
+            } else {
+                viewModel.logout.value = false
+                loginUser("joe@gmail.com", "Pass123#")
+
+            }
+
+        }
     }
 
-    private fun loginUser() {
-        mAuth.signInWithEmailAndPassword("joe@gmail.com", "Pass123#")
+    private fun loginUser(userId: String, passWd: String) {
+        mAuth.signInWithEmailAndPassword(userId, passWd)
             .addOnCompleteListener { task ->
                 if (task.isSuccessful) {
                     findNavController().navigate(R.id.action_FirstFragment_to_SecondFragment)

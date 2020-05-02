@@ -15,16 +15,17 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="16dp"
         android:text="User Id"
-        app:layout_constraintBaseline_toBaselineOf="@+id/editText"
-        app:layout_constraintEnd_toStartOf="@+id/editText" />
+        app:layout_constraintBaseline_toBaselineOf="@+id/ed_userId"
+        app:layout_constraintEnd_toStartOf="@+id/ed_userId" />
 
     <EditText
-        android:id="@+id/editText"
+        android:id="@+id/ed_userId"
         style="@style/AddText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="24dp"
         android:ems="10"
+        android:text="joe@gmail.com"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
         tools:layout_editor_absoluteY="136dp" />
@@ -35,22 +36,23 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Password"
-        app:layout_constraintBaseline_toBaselineOf="@+id/editText2"
-        app:layout_constraintEnd_toStartOf="@+id/editText2"
+        app:layout_constraintBaseline_toBaselineOf="@+id/ed_password"
+        app:layout_constraintEnd_toStartOf="@+id/ed_password"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="@+id/textView" />
 
     <EditText
-        android:id="@+id/editText2"
+        android:id="@+id/ed_password"
         style="@style/AddText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
         android:layout_marginEnd="24dp"
         android:ems="10"
+        android:text="Pass123#"
         android:inputType="textPassword"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText" />
+        app:layout_constraintTop_toBottomOf="@+id/ed_userId" />
 
     <Button
         android:id="@+id/btn_login"
@@ -60,6 +62,6 @@
         android:text="Log In"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText2" />
+        app:layout_constraintTop_toBottomOf="@+id/ed_password" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

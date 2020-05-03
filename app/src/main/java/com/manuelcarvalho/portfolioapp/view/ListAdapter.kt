@@ -1,5 +1,6 @@
 package com.manuelcarvalho.portfolioapp.view
 
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -10,6 +11,7 @@ import com.manuelcarvalho.portfolioapp.model.Part
 import kotlinx.android.synthetic.main.list_view.view.*
 
 
+private const val TAG = "ListAdapter"
 class ListAdapter(val cartList: ArrayList<Part>) :
     RecyclerView.Adapter<ListAdapter.CartViewHolder>() {
 
@@ -17,6 +19,10 @@ class ListAdapter(val cartList: ArrayList<Part>) :
         cartList.clear()
         cartList.addAll(cartList1)
         notifyDataSetChanged()
+    }
+
+    fun removeItem() {
+        Log.d(TAG, "Adapter remove item")
     }
 
 

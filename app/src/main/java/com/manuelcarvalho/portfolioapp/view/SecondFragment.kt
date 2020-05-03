@@ -79,7 +79,7 @@ class SecondFragment : Fragment() {
             }
 
             override fun onSwiped(viewHolder: RecyclerView.ViewHolder, direction: Int) {
-                listAdapter.removeItem()
+                listAdapter.removeItem(viewHolder)
             }
 
         }

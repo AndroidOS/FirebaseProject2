@@ -8,6 +8,7 @@ import androidx.navigation.Navigation
 import androidx.recyclerview.widget.RecyclerView
 import com.manuelcarvalho.portfolioapp.R
 import com.manuelcarvalho.portfolioapp.model.Part
+import com.manuelcarvalho.portfolioapp.utils.removeFirestoreItem
 import kotlinx.android.synthetic.main.list_view.view.*
 
 
@@ -21,8 +22,11 @@ class ListAdapter(val cartList: ArrayList<Part>) :
         notifyDataSetChanged()
     }
 
-    fun removeItem() {
-        Log.d(TAG, "Adapter remove item")
+    fun removeItem(viewHolder: RecyclerView.ViewHolder) {
+        Log.d(TAG, "Adapter remove item ${viewHolder.adapterPosition}")
+        cartList.removeAt(viewHolder.adapterPosition)
+        removeFirestoreItem(cartList[viewHolder.adapterPosition].catridge)
+        notifyDataSetChanged()
     }
 
 

@@ -73,4 +73,32 @@ class AppViewModel(application: Application) : BaseViewModel(application) {
 
     }
 
+    fun deleteItem(name: String) {
+        launch {
+            Log.d(TAG, "removeFirestoreItem")
+            val db = Firebase.firestore
+            db.collection("carts")
+                .whereEqualTo("catridge", "Avenger  (Vic Avenger)")
+                .get()
+                .addOnSuccessListener { documents ->
+                    val batch = db.batch()
+                    for (d in documents) {
+                        Log.d(TAG, "getting documents: ${d}")
+
+
+                        db.collection("carts").whereEqualTo("catridge", name)
+                            .get().result?.forEach {
+                                batch.delete(it.reference)
+                            }
+
+
+                    }
+
+                    batch.commit()
+                }
+                .addOnFailureListener { exception ->
+                    Log.w(TAG, "New Error getting documents: ", exception)
+                }
+        }
+    }
 }

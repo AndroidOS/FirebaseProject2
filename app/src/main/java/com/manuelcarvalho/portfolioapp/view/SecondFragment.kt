@@ -79,7 +79,9 @@ class SecondFragment : Fragment() {
             }
 
             override fun onSwiped(viewHolder: RecyclerView.ViewHolder, direction: Int) {
-                listAdapter.removeItem(viewHolder)
+                val cartName = listAdapter.removeItem(viewHolder)
+                viewModel.deleteItem(cartName)
+                Log.d(TAG, " cart Name $cartName")
             }
 
         }

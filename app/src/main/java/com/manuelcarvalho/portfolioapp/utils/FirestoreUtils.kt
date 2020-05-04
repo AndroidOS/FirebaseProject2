@@ -8,18 +8,30 @@ private const val TAG = "Utils"
 
 fun removeFirestoreItem(name: String) {
     Log.d(TAG, "removeFirestoreItem")
-
-    val db = Firebase.firestore.collection("carts")
-
-    db
-        .whereEqualTo("cartridge", name)
+    val db = Firebase.firestore
+    db.collection("carts")
+        .whereEqualTo("catridge", "Avenger  (Vic Avenger)")
         .get()
-        .addOnSuccessListener {
+        .addOnSuccessListener { documents ->
+            val batch = db.batch()
+            for (d in documents) {
+                Log.d(TAG, "getting documents: ${d}")
 
-            Log.d(TAG, "")
-            for (i in it) {
+
+                db.collection("carts").whereEqualTo("catridge", name).get().result?.forEach {
+                    batch.delete(it.reference)
+                }
+
 
             }
+
+            batch.commit()
         }
-        .addOnFailureListener { e -> Log.w(TAG, "Error deleting document", e) }
+        .addOnFailureListener { exception ->
+            Log.w(TAG, "New Error getting documents: ", exception)
+        }
+
 }
+
+
+

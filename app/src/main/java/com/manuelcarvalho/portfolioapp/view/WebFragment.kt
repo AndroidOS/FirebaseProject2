@@ -34,9 +34,16 @@ class WebFragment : Fragment() {
 
 
 //        val url = "https://www.google.com/search?q=%22Commodore%22+%22VIC-20%22"
-        val url = "https://www.google.com/search?q=CommodoreVic20"
-        Log.d(TAG, "WEBf $url")
+        var url = "https://www.google.com/search?q=Commodore+VIC20+"
 
+
+        var wordArray = cart.split(" ")
+
+        for (word in wordArray) {
+            url += "$word+"
+        }
+
+        Log.d(TAG, "Array $wordArray")
         webView.webViewClient = object : WebViewClient() {
             override fun shouldOverrideUrlLoading(view: WebView?, url: String?): Boolean {
                 view?.loadUrl(url)

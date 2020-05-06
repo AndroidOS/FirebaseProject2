@@ -21,6 +21,7 @@ class AppViewModel(application: Application) : BaseViewModel(application) {
     val manufacturers = MutableLiveData<List<String>>()
     val carts by lazy { MutableLiveData<List<Part>>() }
     val fabDisplay = MutableLiveData<Boolean>()
+    val listEmpty = MutableLiveData<Boolean>()
     val manuSelect = MutableLiveData<String>()
 
     fun refresh(choice: String) {
@@ -31,6 +32,14 @@ class AppViewModel(application: Application) : BaseViewModel(application) {
                 .get()
                 .addOnSuccessListener { documents ->
                     createList(documents)
+                    if (documents.isEmpty) {
+                        listEmpty.value = false
+                        Log.d(TAG, "isEmpty true")
+                    } else {
+                        listEmpty.value = true
+                        Log.d(TAG, "isEmpty false")
+                    }
+
                     for (document in documents) {
                         Log.d(TAG, "${document.id} => ${document.data}")
                         Log.d(TAG, "${documents.size()}")

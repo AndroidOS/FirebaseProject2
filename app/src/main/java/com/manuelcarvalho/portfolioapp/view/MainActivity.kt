@@ -2,6 +2,7 @@ package com.manuelcarvalho.portfolioapp.view
 
 import android.content.Context
 import android.content.DialogInterface
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.Menu
@@ -42,6 +43,19 @@ class MainActivity : AppCompatActivity() {
 //            val a = "Broderbund   "
 //            viewModel.refresh(a)
             //dialogueQuery()
+
+            val to = "tom@gmail.com"
+            val subject = "cartridge list"
+            val message = "Must collect all carts"
+
+            val intent = Intent(Intent.ACTION_SEND)
+            val addressees = arrayOf(to)
+            intent.putExtra(Intent.EXTRA_EMAIL, addressees)
+            intent.putExtra(Intent.EXTRA_SUBJECT, subject)
+            intent.putExtra(Intent.EXTRA_TEXT, message)
+            intent.type = "message/rfc822"
+            startActivity(Intent.createChooser(intent, "Select Email Sending App :"))
+
 
         }
     }
@@ -248,5 +262,17 @@ class MainActivity : AppCompatActivity() {
 
             }
         })
+
+        viewModel.listEmpty.observe(this, Observer { isEmpty ->
+            isEmpty?.let {
+                if (isEmpty == true) {
+                    Log.d(TAG, "isEmpty true")
+                    fab.hide()
+                } else {
+                    fab.show()
+                }
+            }
+        })
+
     }
 }

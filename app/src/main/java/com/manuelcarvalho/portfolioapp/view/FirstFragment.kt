@@ -61,7 +61,7 @@ class FirstFragment : Fragment() {
                 findNavController().navigate(R.id.action_FirstFragment_to_SecondFragment)
             } else {
                 viewModel.logout.value = false
-                loginUser("joe@gmail.com", "Pass123#")
+                loginUser("tom@gmail.com", "Password1")
 
             }
 

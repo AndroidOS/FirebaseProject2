@@ -19,7 +19,6 @@ import com.google.firebase.ktx.Firebase
 import com.manuelcarvalho.portfolioapp.R
 import com.manuelcarvalho.portfolioapp.model.Part
 import com.manuelcarvalho.portfolioapp.viewmodel.AppViewModel
-import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.fragment_second.*
 
 private const val TAG = "SecondFragment"
@@ -126,9 +125,9 @@ class SecondFragment : Fragment() {
             carts?.let {
                 listAdapter.updatelist(carts)
                 if (carts.isEmpty()) {
-                    fab.hide()
+                    //fab.hide()
                 } else {
-                    fab.show()
+                    //fab.show()
                 }
             }
         })

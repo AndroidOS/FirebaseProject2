@@ -33,11 +33,11 @@ class AppViewModel(application: Application) : BaseViewModel(application) {
                 .addOnSuccessListener { documents ->
                     createList(documents)
                     if (documents.isEmpty) {
-                        listEmpty.value = false
-                        Log.d(TAG, "isEmpty true")
+                        //listEmpty.value = false
+//                        Log.d(TAG, "isEmpty true")
                     } else {
-                        listEmpty.value = true
-                        Log.d(TAG, "isEmpty false")
+                        //listEmpty.value = true
+//                        Log.d(TAG, "isEmpty false")
                     }
 
                     for (document in documents) {

@@ -44,9 +44,16 @@ class MainActivity : AppCompatActivity() {
 //            viewModel.refresh(a)
             //dialogueQuery()
 
+            var stringList = ""
+            var manufacturer = ""
+            for (n in viewModel.carts.value!!) {
+                stringList += "${n.catridge}\n"
+                manufacturer = n.manufacturer
+            }
+
             val to = "tom@gmail.com"
-            val subject = "cartridge list"
-            val message = "Must collect all carts"
+            val subject = "cartridge list for ${manufacturer}."
+            val message = stringList
 
             val intent = Intent(Intent.ACTION_SEND)
             val addressees = arrayOf(to)

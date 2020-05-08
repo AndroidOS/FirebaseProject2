@@ -2,6 +2,7 @@ package com.manuelcarvalho.portfolioapp.viewmodel
 
 import android.app.Application
 import android.util.Log
+import android.widget.Toast
 import androidx.lifecycle.MutableLiveData
 import com.google.firebase.firestore.QuerySnapshot
 import com.google.firebase.firestore.ktx.firestore
@@ -50,6 +51,21 @@ class AppViewModel(application: Application) : BaseViewModel(application) {
                 }
 
         }
+    }
+
+    fun addCart(part: Part) {
+        db.collection("carts")
+            .add(part)
+            .addOnSuccessListener {
+                Toast.makeText(
+                    getApplication(),
+                    "Document $it successfully added.",
+                    Toast.LENGTH_SHORT
+                ).show()
+            }
+            .addOnFailureListener {
+                Toast.makeText(getApplication(), "Error: ${it}", Toast.LENGTH_SHORT).show()
+            }
     }
 
 

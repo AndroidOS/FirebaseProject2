@@ -49,6 +49,7 @@ class AddFragment : Fragment() {
             )
 
             Log.d(TAG, "$part")
+            viewModel.addCart(part)
 
         }
     }

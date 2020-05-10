@@ -14,6 +14,7 @@ import androidx.lifecycle.ViewModelProviders
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 import com.manuelcarvalho.portfolioapp.R
+import com.manuelcarvalho.portfolioapp.model.Manufacturer
 import com.manuelcarvalho.portfolioapp.model.Part
 import com.manuelcarvalho.portfolioapp.viewmodel.AppViewModel
 import kotlinx.android.synthetic.main.activity_main.*
@@ -43,6 +44,7 @@ class MainActivity : AppCompatActivity() {
 //            val a = "Broderbund   "
 //            viewModel.refresh(a)
             //dialogueQuery()
+            //putManufacturers()
 
             var stringList = ""
             var manufacturer = ""
@@ -281,5 +283,34 @@ class MainActivity : AppCompatActivity() {
             }
         })
 
+    }
+
+    private fun putManufacturers() {
+        val items = arrayOf<String>(
+            "Academy",
+            "Atarisoft",
+            "Beyond",
+            "Boone",
+            "Broderbund",
+            "CBS Soft.",
+            "Commodore",
+            "Creative",
+            "HES",
+            "Imagic",
+            "Xonox"
+        )
+
+        for (m in items) {
+            val manu = Manufacturer(m)
+
+            db.collection("manufacturers")
+                .add(manu)
+                .addOnSuccessListener { documentReference ->
+                    Log.d(TAG, "DocumentSnapshot added with ID: ${documentReference.id}")
+                }
+                .addOnFailureListener { e ->
+                    Log.w(TAG, "Error adding document", e)
+                }
+        }
     }
 }

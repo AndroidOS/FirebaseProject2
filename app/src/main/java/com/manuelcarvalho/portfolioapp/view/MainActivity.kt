@@ -25,13 +25,29 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var viewModel: AppViewModel
     val db = Firebase.firestore
-    val manu = arrayOf<CharSequence>()
+    var manu = arrayOf<CharSequence>()
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         setSupportActionBar(toolbar)
+
+        val items = arrayOf<CharSequence>(
+            "Academy",
+            "Atarisoft",
+            "Beyond",
+            "Boone",
+            "Broderbund",
+            "CBS Soft.",
+            "Commodore",
+            "Creative",
+            "HES",
+            "Imagic",
+            "Xonox"
+        )
+
+        manu = items
 
         viewModel = ViewModelProviders.of(this)[AppViewModel::class.java]
 
@@ -114,25 +130,13 @@ class MainActivity : AppCompatActivity() {
                 setTitle("Choose Cartridge")
 
                 //Test data
-                val items = arrayOf<CharSequence>(
-                    "Academy",
-                    "Atarisoft",
-                    "Beyond",
-                    "Boone",
-                    "Broderbund",
-                    "CBS Soft.",
-                    "Commodore",
-                    "Creative",
-                    "HES",
-                    "Imagic",
-                    "Xonox"
-                )
+
 
                 builder.setItems(
-                    items,
+                    manu,
 
                     DialogInterface.OnClickListener { dialog, which ->
-                        choice = items[which].toString()
+                        choice = manu[which].toString()
                         viewModel.refresh(choice)
 
                         val preference = getSharedPreferences(
@@ -280,6 +284,17 @@ class MainActivity : AppCompatActivity() {
                 } else {
                     fab.show()
                 }
+            }
+        })
+
+        viewModel.suppliers.observe(this, Observer { list ->
+            var myArray = arrayOf<CharSequence>()
+            list?.let {
+                for (n in list) {
+                    Log.d(TAG, "viewModel ${n}")
+                }
+
+
             }
         })
 

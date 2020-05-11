@@ -24,8 +24,10 @@ class AppViewModel(application: Application) : BaseViewModel(application) {
     val fabDisplay = MutableLiveData<Boolean>()
     val listEmpty = MutableLiveData<Boolean>()
     val manuSelect = MutableLiveData<String>()
+    val suppliers = MutableLiveData<List<String>>()
 
     fun refresh(choice: String) {
+        getSuppliers()
         // Log.w(TAG, "$choice")
         launch {
             db.collection("carts")
@@ -126,4 +128,27 @@ class AppViewModel(application: Application) : BaseViewModel(application) {
                 }
         }
     }
+
+    private fun getSuppliers() {
+        launch {
+            var man = mutableListOf<String>()
+            db.collection("manufacturers")
+                .get()
+                .addOnSuccessListener { documents ->
+
+                    for (document in documents) {
+//                        Log.d(TAG,"${document.data.get("man")}")
+                        man.add(document.data.get("man").toString())
+                    }
+                }
+                .addOnFailureListener { exception ->
+                    Log.w(TAG, "Error getting manufacturers: ", exception)
+                }
+
+            suppliers.value = man
+
+        }
+    }
+
+
 }

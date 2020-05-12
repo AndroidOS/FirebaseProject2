@@ -44,8 +44,8 @@ class AppViewModel(application: Application) : BaseViewModel(application) {
                     }
 
                     for (document in documents) {
-                        Log.d(TAG, "${document.id} => ${document.data}")
-                        Log.d(TAG, "${documents.size()}")
+                        //Log.d(TAG, "${document.id} => ${document.data}")
+                        //Log.d(TAG, "${documents.size()}")
                     }
                 }
                 .addOnFailureListener { exception ->
@@ -75,9 +75,9 @@ class AppViewModel(application: Application) : BaseViewModel(application) {
         launch {
             var cartList = mutableListOf<Part>()
             var manu = mutableListOf<String>()
-            Log.d(TAG, "${documents}")
+            //Log.d(TAG, "${documents}")
             for (document in documents) {
-                Log.d(TAG, "${document}")
+                //Log.d(TAG, "${document}")
                 manu.add(document.data["manufacturer"].toString())
                 cartList.add(
                     Part(
@@ -110,7 +110,7 @@ class AppViewModel(application: Application) : BaseViewModel(application) {
                 .addOnSuccessListener { documents ->
                     val batch = db.batch()
                     for (d in documents) {
-                        Log.d(TAG, "getting documents: ${d}")
+                        //Log.d(TAG, "getting documents: ${d}")
 
 
                         db.collection("carts").whereEqualTo("catridge", name)
@@ -130,6 +130,7 @@ class AppViewModel(application: Application) : BaseViewModel(application) {
     }
 
     private fun getSuppliers() {
+        Log.d(TAG, "getSuppliers")
         launch {
             var man = mutableListOf<String>()
             db.collection("manufacturers")
@@ -137,16 +138,18 @@ class AppViewModel(application: Application) : BaseViewModel(application) {
                 .addOnSuccessListener { documents ->
 
                     for (document in documents) {
-//                        Log.d(TAG,"${document.data.get("man")}")
+
                         man.add(document.data.get("man").toString())
                     }
+                    Log.d(TAG, "list1 ${man}")
+                    suppliers.value = man
                 }
                 .addOnFailureListener { exception ->
                     Log.w(TAG, "Error getting manufacturers: ", exception)
                 }
 
-            suppliers.value = man
 
+            Log.d(TAG, "list ${suppliers.value}")
         }
     }
 

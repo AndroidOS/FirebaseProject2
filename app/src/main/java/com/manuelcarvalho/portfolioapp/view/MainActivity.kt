@@ -7,6 +7,7 @@ import android.os.Bundle
 import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
+import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
@@ -33,7 +34,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         setSupportActionBar(toolbar)
 
-        val items = arrayOf<CharSequence>(
+        var items = arrayOf<CharSequence>(
             "Academy",
             "Atarisoft",
             "Beyond",
@@ -269,7 +270,7 @@ class MainActivity : AppCompatActivity() {
             var myArray = arrayOf<CharSequence>()
             list?.let {
                 for (n in list) {
-                    Log.d(TAG, "manu $n")
+                    //Log.d(TAG, "manu $n")
                 }
 
 
@@ -290,10 +291,12 @@ class MainActivity : AppCompatActivity() {
         viewModel.suppliers.observe(this, Observer { list ->
             var myArray = arrayOf<CharSequence>()
             list?.let {
+                Toast.makeText(this, "Suppliers observed", Toast.LENGTH_SHORT).show()
                 for (n in list) {
                     Log.d(TAG, "viewModel ${n}")
+                    manu = list.toTypedArray()
                 }
-
+                Log.d(TAG, "Suppliers ${list}")
 
             }
         })
